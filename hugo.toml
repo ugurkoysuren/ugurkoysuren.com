@@ -27,7 +27,7 @@ refLinksErrorLevel = 'WARNING'
   keywords = ['Ugur Köysüren', 'Software', 'programming', 'developer blog', 'personal blog']
 
   # Used in site header
-  tagline = 'a Hugo theme for minimal editions'
+  tagline = 'daytime programmer, nighttime overthinker'
 
   # Custom footer text on left sidebar. Use HTMl if needed.
   # "&copy;" and "{year}" will be replaced by © and the current year.
@@ -41,7 +41,7 @@ refLinksErrorLevel = 'WARNING'
   # - RSS feeds
   # - search index
   # - ...
-  mainSections = ['posts', 'dramas', 'narratives', 'poems']
+  mainSections = ['posts','programming']
 
   # Posts date format, for example: 2006-01-02
   dateFormat = ':date_long'
@@ -165,16 +165,6 @@ refLinksErrorLevel = 'WARNING'
     pageRef = '/about'
     weight = 2
   [[menus.main]]
-    identifier = 'credits'
-    name = 'Credits'
-    pageRef = '/credits'
-    weight = 3
-  [[menus.main]]
-    identifier = 'documentation'
-    name = 'Documentation'
-    pageRef = '/documentation'
-    weight = 4
-  [[menus.main]]
     identifier = 'search'
     name = 'Search'
     pageRef = '/search'
@@ -186,8 +176,8 @@ refLinksErrorLevel = 'WARNING'
     weight = 6
   [[menus.main]]
     identifier = 'github'
-    name = 'GitHub Project'
-    url = 'https://github.com/sergeyklay/gohugo-theme-ed/'
+    name = 'GitHub'
+    url = 'https://github.com/ugurkoysuren'
     weight = 20
     params = {external = true}
 

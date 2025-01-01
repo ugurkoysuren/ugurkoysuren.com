@@ -1,57 +1,45 @@
-name: Publish Blog
+name: Deploy Hugo Blog to Production
 
 on: push
 
 jobs:
-  deploy:
-
+  deploy-hugo-blog:
     runs-on: ubuntu-22.04
-
     steps:
-
-      # CHEKCOUT REPOSITORY
-
-      - name: Git checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      # SETUP HUGO
-
-      # Read environemnt variable for subsequent actions.
-      # See: https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#setting-an-environment-variable
-      - name: Read .env
+      - name: Load Hugo version from environment
         run: |
           . ./.env
           echo "HUGO_VERSION=${HUGO_VERSION}" >> $GITHUB_ENV          
 
-      - name: Setup Hugo
+      - name: Install Hugo static site generator
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: '${{ env.HUGO_VERSION }}'
           extended: true
 
-      - name: Cache Hugo
+      - name: Configure Hugo module cache
         uses: actions/cache@v3
         with:
           path: /tmp/hugo_cache
-          key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
+          key: ${{ runner.os }}-hugo-modules-${{ hashFiles('**/go.sum') }}
           restore-keys: |
-            ${{ runner.os }}-hugomod-            
+            ${{ runner.os }}-hugo-modules-
 
-      - name: Build Blog
+      - name: Generate static site
         env:
           TZ: 'Europe/Berlin'
         run: hugo --minify
 
-      # DEPLOY TO REMOTE SERVER
-
-      - name: Install SSH Key
+      - name: Configure SSH deployment key
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.DEPLOY_KEY }}
-          known_hosts: 'placeholder'
 
-      - name: Adding Known Hosts
+      - name: Configure SSH known hosts
         run: ssh-keyscan -H ${{ secrets.DEPLOY_HOST_IP }} >> ~/.ssh/known_hosts
 
-      - name: Deploy with rsync
-        run: rsync -avz --delete ./public/ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST_IP }}:${{ secrets.DEPLOY_PATH }}
+      - name: Sync site to production server
+        run: rsync -vaz --delete ./public/ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST_IP }}:${{ secrets.DEPLOY_PATH }}

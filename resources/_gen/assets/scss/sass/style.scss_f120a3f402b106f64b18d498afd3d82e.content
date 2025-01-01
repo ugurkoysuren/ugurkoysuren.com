@@ -91,7 +91,7 @@ body {
 
 /* Links */
 a, .text-title a {
-  color: #0000EE;
+  color: #841212;
   text-decoration: none; }
 
 /* `:focus` is linked to `:hover` for basic accessibility */
@@ -148,7 +148,7 @@ hr {
 /* Search highlighting */
 mark {
   color: white;
-  background-color: #0000EE; }
+  background-color: #841212; }
 
 /* Quotes */
 blockquote {
@@ -268,7 +268,7 @@ tbody tr:nth-child(odd) th {
 
 /* Sidebar content */
 .sidebar {
-  background-color: #0000EE; }
+  background-color: #841212; }
 
 .sidebar a {
   font-weight: normal;
@@ -1006,7 +1006,7 @@ ul.pager {
   .post-tags a {
     margin-left: 20px;
     padding: 0 10px 0 12px;
-    background: #0000EE;
+    background: #841212;
     color: #fff;
     text-decoration: none;
     -webkit-border-radius: 0 4px 4px 0;
@@ -1020,7 +1020,7 @@ ul.pager {
       left: -12px;
       width: 0;
       height: 0;
-      border-color: transparent #0000EE transparent transparent;
+      border-color: transparent #841212 transparent transparent;
       border-style: solid;
       border-width: 12px 12px 12px 0; }
     .post-tags a:after {
