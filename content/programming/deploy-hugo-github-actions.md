@@ -116,6 +116,7 @@ Create a new file in your repository at .github/workflows/deploy.yml and add the
                uses: shimataro/ssh-key-action@v2
                with:
                   key: ${{ secrets.DEPLOY_KEY }}
+                  known_hosts: unnecessary
 
              - name: Configure SSH known hosts
                run: ssh-keyscan -H ${{ secrets.DEPLOY_HOST_IP }} >> ~/.ssh/known_hosts
