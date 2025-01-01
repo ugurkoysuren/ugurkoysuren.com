@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: http://ogp.me/ns#" id="top-of-site">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no">
+
+    <link rel="canonical" href="https://ugurkoysuren.com/programming/deploy-hugo-github-actions/">
+
+    <title>Deploying a Hugo Application using Github Actions on a a self hosted Server - Ugur</title>
+    <meta name="description" content="Deploying a Hugo Application Using GitHub Actions on a Self-Hosted Server In this tutorial, we will walk through the process of deploying a Hugo static site to …">
+    <meta name="keywords" content="Hugo, Github, Workflows, Github Actions, Devops">
+
+    <meta name="author" content="Ugur Köysüren">
+    <meta name="generator" content="Hugo 0.119.0">
+
+    
+    <link crossorigin="anonymous" href="/css/stylesheet.min.6bc07181ce5ef50287bc4654af74a6270eb91b8b28bd14508025e73ae77f770b.css" integrity="sha256-a8Bxgc5e9QKHvEZUr3SmJw65G4sovRRQgCXnOud/dws=" rel="preload stylesheet" as="style">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <link rel="manifest" type="application/manifest+json" href="/manifest.webmanifest" title="Manifest">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" title="Sitemap">
+    <link rel="author" type="text/plain" href="/humans.txt" title="Humans">
+
+
+    <meta name="theme-color" content="#ffffff">    
+    <meta property="og:title" content="Deploying a Hugo Application using Github Actions on a a self hosted Server - Ugur">
+    <meta property="og:description" content="Deploying a Hugo Application Using GitHub Actions on a Self-Hosted Server In this tutorial, we will walk through the process of deploying a Hugo static site to …">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ugurkoysuren.com/programming/deploy-hugo-github-actions/">
+    <meta property="og:image" content="https://ugurkoysuren.com/img/open-graph-logo.png">
+    <meta property="og:image:width" content="200">
+    <meta property="og:image:height" content="200">
+    <meta property="article:published_time" content="2025-01-01T20:35:10">
+    <meta property="article:modified_time" content="2025-01-01T20:35:10">
+    <meta property="article:tag" content="Hugo">
+    <meta property="article:tag" content="Github">
+    <meta property="article:tag" content="Workflows">
+    <meta property="article:tag" content="Github Actions">
+    <meta property="article:tag" content="Devops">
+    
+    <meta name="twitter:title" content="Deploying a Hugo Application using Github Actions on a a self hosted Server - Ugur">
+    <meta name="twitter:description" content="Deploying a Hugo Application Using GitHub Actions on a Self-Hosted Server In this tutorial, we will walk through the process of deploying a Hugo static site to …">
+    <meta name="twitter:site" content="@egreps">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://ugurkoysuren.com/img/open-graph-logo.png">
+    
+
+<script type="application/ld+json" id="schema-data">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://ugurkoysuren.com/programming/deploy-hugo-github-actions/"
+        },
+        "url": "https://ugurkoysuren.com/programming/deploy-hugo-github-actions/",
+        "headline": "Deploying a Hugo Application using Github Actions on a a self hosted Server - Ugur",
+        "description": "Deploying a Hugo Application Using GitHub Actions on a Self-Hosted Server In this tutorial, we will walk through the process of deploying a Hugo static site to …",
+        "keywords": ["Hugo","Github","Workflows","Github Actions","Devops"],
+        "datePublished": "2025-01-01T20:35:10+02:00",
+        "dateModified": "2025-01-01T20:35:10+02:00",
+            "author": {
+                "@type": "Person",
+                "name": "Ugur Köysüren"
+            },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Serghei Iakovlev",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://ugurkoysuren.com/img/open-graph-logo_hu649006a96c7f6a02c0a48e2d90a9a7b0_5229_96x96_resize_box_3.png",
+                "width": "96",
+                "height": "96"
+            }
+        }
+    }
+</script>
+
+
+
+    <script src="/js/common.js"></script>
+</head>
+
+    <body class="theme-base-">
+        <div id="top-of-site-anchor"></div>
+        
+            
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-item">
+        <p>Senior Overthinker</p>
+    </div>
+
+    <nav class="sidebar-nav">
+            <a class="sidebar-nav-item"
+                href="/"
+                id="menu-main-home">Home</a>
+            <a class="sidebar-nav-item"
+                href="/about/"
+                id="menu-main-about">About</a>
+            <a class="sidebar-nav-item"
+                href="/search/"
+                id="menu-main-search">Search</a>
+            <a class="sidebar-nav-item"
+                href="/contact/"
+                id="menu-main-contact">Contact</a>
+            <a class="sidebar-nav-item"
+                href="https://github.com/ugurkoysuren"
+                id="menu-main-github" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <span class="hypothesis-container">
+    <a class="sidebar-nav-item" id="hypothesis-link" href="#">Annotate me</a>
+</span>
+
+            <div class="sidebar-nav-item">
+                    
+                    <a href="/rss.xml" id="menu-feeds-rss" class="menu-feeds-item" data-feed-type="rss">RSS 2.0</a>
+                
+                    <span aria-hidden="true">|</span>
+                    <a href="/atom.xml" id="menu-feeds-atom" class="menu-feeds-item" data-feed-type="atom">Atom</a>
+                
+                    <span aria-hidden="true">|</span>
+                    <a href="/feed.json" id="menu-feeds-json" class="menu-feeds-item" data-feed-type="json">Json Feed</a>
+                
+            </div>
+        
+    </nav>
+
+    
+    <div class="sidebar-item">
+        <p>Built with <a href="https://github.com/sergeyklay/gohugo-theme-ed" target="_blank" rel="noopener noreferrer">Ed</a>. Distributed under an MIT license.</p>
+    </div>
+
+
+</aside>
+
+        
+        <div class="wrap">
+            <header class="masthead">
+                <div class="container">
+                    <h3 class="masthead-title">
+                        <a href="/" title="Home">Ugur</a>
+                        <br><small>daytime programmer, nighttime overthinker</small>
+                    </h3>
+                </div>
+            </header>
+
+            <main class="container content" id="main">
+                <article class="programming" role="document" lang="en">
+    <header>
+        <h1 class="text-title">
+            Deploying a Hugo Application using Github Actions on a a self hosted Server
+        </h1>
+        <p class="byline">
+            
+                
+
+
+Published on
+<time datetime="2025-01-01T20:35:10&#43;02:00">
+    January 1, 2025
+</time>
+
+
+
+
+            
+        </p>
+    </header>
+
+    <div class="programming-body">
+        <h1 id="deploying-a-hugo-application-using-github-actions-on-a-self-hosted-server">Deploying a Hugo Application Using GitHub Actions on a Self-Hosted Server</h1>
+<p>In this tutorial, we will walk through the process of deploying a Hugo static site to a self-hosted server using GitHub
+Actions. This setup ensures an automated workflow where your changes are built and deployed to the server whenever you
+push updates to your repository.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before getting started, ensure you have the following:</p>
+<ol>
+<li>A Hugo application hosted on GitHub.</li>
+<li>Access to a self-hosted server with SSH enabled.</li>
+<li>Installed GitHub CLI or access to your repository&rsquo;s settings.</li>
+</ol>
+<hr>
+<h2 id="step-1-prepare-your-server">Step 1: Prepare Your Server</h2>
+<ol>
+<li>Ensure your server is accessible via SSH.</li>
+<li>Install a web server (e.g., Nginx, Apache) to serve your Hugo site.</li>
+<li>Create a directory on the server where the Hugo site will be deployed (e.g., <code>/var/www/hugo-site</code>).</li>
+</ol>
+<hr>
+<h2 id="step-2-generate-an-ssh-key-pair">Step 2: Generate an SSH Key Pair</h2>
+<ol>
+<li>On your local machine, generate an SSH key pair:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">&#34;your_email@example.com&#34;</span>
+</span></span></code></pre></div></li>
+</ol>
+<p>Save the key without a passphrase.</p>
+<ol start="2">
+<li>
+<p>Copy the public key to the server:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> ssh-copy-id user@your-server-ip
+</span></span></code></pre></div></li>
+<li>
+<p>Add the private key to your GitHub repository as a secret:</p>
+</li>
+</ol>
+<ul>
+<li>Navigate to Settings &gt; Secrets and variables &gt; Actions.</li>
+<li>Add a new secret named DEPLOY_KEY and paste the private key.</li>
+</ul>
+<h2 id="step-3-add-additional-secrets">Step 3: Add Additional Secrets</h2>
+<p>Add the server&rsquo;s IP address:</p>
+<p>Secret name: DEPLOY_HOST_IP
+Value: Your server&rsquo;s IP (e.g., 192.168.1.100).
+Add the server&rsquo;s SSH username:</p>
+<p>Secret name: DEPLOY_USER
+Value: Your SSH username (e.g., user).
+Add the deployment path on the server:</p>
+<p>Secret name: DEPLOY_PATH
+Value: The path where the Hugo site will be deployed (e.g., /var/www/hugo-site).
+Add Hugo version (optional):</p>
+<p>Secret name: HUGO_VERSION
+Value: The version of Hugo you want to use (e.g., 0.117.0).</p>
+<h2 id="step-4-configure-the-github-actions-workflow">Step 4: Configure the GitHub Actions Workflow</h2>
+<p>Create a new file in your repository at .github/workflows/deploy.yml and add the following content:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Deploy Hugo Blog to Production</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="nt">on</span><span class="p">:</span><span class="w"> </span><span class="l">push</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="nt">jobs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">deploy-hugo-blog</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu-22.04</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="nt">steps</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Checkout repository</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/checkout@v4</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Load Hugo version from environment</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">               . ./.env
+</span></span></span><span class="line"><span class="cl"><span class="sd">               echo &#34;HUGO_VERSION=${HUGO_VERSION}&#34; &gt;&gt; $GITHUB_ENV          </span><span class="w">               
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Install Hugo static site generator</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">peaceiris/actions-hugo@v2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">               </span><span class="nt">hugo-version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;${{ env.HUGO_VERSION }}&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">               </span><span class="nt">extended</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Configure Hugo module cache</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/cache@v3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">               </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l">/tmp/hugo_cache</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">               </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l">${{ runner.os }}-hugo-modules-${{ hashFiles(&#39;**/go.sum&#39;) }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">               </span><span class="nt">restore-keys</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">                  ${{ runner.os }}-hugo-modules-</span><span class="w">                  
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Generate static site</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">env</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">               </span><span class="nt">TZ</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Europe/Berlin&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">hugo --minify</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Configure SSH deployment key</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">shimataro/ssh-key-action@v2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">               </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l">${{ secrets.DEPLOY_KEY }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">               </span><span class="nt">known_hosts</span><span class="p">:</span><span class="w"> </span><span class="l">unnecessary</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Configure SSH known hosts</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">ssh-keyscan -H ${{ secrets.DEPLOY_HOST_IP }} &gt;&gt; ~/.ssh/known_hosts</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Sync site to production server</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">rsync -vaz --delete ./public/ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST_IP }}:${{ secrets.DEPLOY_PATH }}</span><span class="w">
+</span></span></span></code></pre></div><h2 id="conclusion">Conclusion</h2>
+<p>You can also check the pipeline of this <a href="https://github.com/ugurkoysuren/ugurkoysuren.com/blob/main/.github/workflows/publish.yml">blogs</a> workflow</p>
+
+    </div>
+
+    
+    
+        
+
+<div class="tags-wrapper">
+    <ul class="post-tags">
+        <li>
+                <a href="/tags/devops/">
+                    Devops
+                </a>
+            </li>
+        <li>
+                <a href="/tags/github/">
+                    Github
+                </a>
+            </li>
+        <li>
+                <a href="/tags/github-actions/">
+                    Github Actions
+                </a>
+            </li>
+        <li>
+                <a href="/tags/hugo/">
+                    Hugo
+                </a>
+            </li>
+        <li>
+                <a href="/tags/workflows/">
+                    Workflows
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+    
+
+    
+</article>
+
+            </main>
+        </div>
+
+        <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+        <a href="#top-of-site" class="top-of-site-link" data-visible="false">
+            <span class="screen-reader-text" aria-label="Back to top of the page">
+                Back to top
+            </span>
+            <svg width="32" height="32" viewBox="0 0 100 100">
+                <path fill="white" d="m50 0c-13.262 0-25.98 5.2695-35.355 14.645s-14.645 22.094-14.645 35.355 5.2695 25.98 14.645 35.355 22.094 14.645 35.355 14.645 25.98-5.2695 35.355-14.645 14.645-22.094 14.645-35.355-5.2695-25.98-14.645-35.355-22.094-14.645-35.355-14.645zm20.832 62.5-20.832-22.457-20.625 22.457c-1.207 0.74219-2.7656 0.57812-3.7891-0.39844-1.0273-0.98047-1.2695-2.5273-0.58594-3.7695l22.918-25c0.60156-0.61328 1.4297-0.96094 2.2891-0.96094 0.86328 0 1.6914 0.34766 2.293 0.96094l22.918 25c0.88672 1.2891 0.6875 3.0352-0.47266 4.0898-1.1562 1.0508-2.9141 1.0859-4.1133 0.078125z"></path>
+            </svg>
+        </a>
+    </body>
+</html>

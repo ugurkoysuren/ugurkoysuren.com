@@ -6,6 +6,52 @@
     <description>Recent content in Tag cloud on Ugur</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>© 2019-2024 Serghei Iakovlev</copyright><atom:link href="https://ugurkoysuren.com/tags/rss.xml" rel="self" type="application/rss+xml" />
+    <copyright>© 2019-2024 Serghei Iakovlev</copyright>
+    <lastBuildDate>Wed, 01 Jan 2025 20:35:10 +0200</lastBuildDate><atom:link href="https://ugurkoysuren.com/tags/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Devops</title>
+      <link>https://ugurkoysuren.com/tags/devops/</link>
+      <pubDate>Wed, 01 Jan 2025 20:35:10 +0200</pubDate>
+      
+      <guid>https://ugurkoysuren.com/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Github</title>
+      <link>https://ugurkoysuren.com/tags/github/</link>
+      <pubDate>Wed, 01 Jan 2025 20:35:10 +0200</pubDate>
+      
+      <guid>https://ugurkoysuren.com/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Github Actions</title>
+      <link>https://ugurkoysuren.com/tags/github-actions/</link>
+      <pubDate>Wed, 01 Jan 2025 20:35:10 +0200</pubDate>
+      
+      <guid>https://ugurkoysuren.com/tags/github-actions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://ugurkoysuren.com/tags/hugo/</link>
+      <pubDate>Wed, 01 Jan 2025 20:35:10 +0200</pubDate>
+      
+      <guid>https://ugurkoysuren.com/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Workflows</title>
+      <link>https://ugurkoysuren.com/tags/workflows/</link>
+      <pubDate>Wed, 01 Jan 2025 20:35:10 +0200</pubDate>
+      
+      <guid>https://ugurkoysuren.com/tags/workflows/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

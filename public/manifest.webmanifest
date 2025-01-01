@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/web-manifest",
   "id": "bab83338-c6bb-55f3-79af-d9cec3e20242",
   "name": "Ugur",
-  "short_name": "a Hugo theme for minimal editions",
+  "short_name": "daytime programmer, nighttime overthinker",
   "description": "Senior Overthinker",
   "lang": "en",
   "dir": "ltr",
@@ -23,16 +23,6 @@
       "url": "/about/"
     } ,
     {
-      "name": "Credits",
-      "short_name" : "credits",
-      "url": "/credits/"
-    } ,
-    {
-      "name": "Documentation",
-      "short_name" : "documentation",
-      "url": "/documentation/"
-    } ,
-    {
       "name": "Search",
       "short_name" : "search",
       "url": "/search/"
@@ -43,9 +33,9 @@
       "url": "/contact/"
     } ,
     {
-      "name": "GitHub Project",
+      "name": "GitHub",
       "short_name" : "github",
-      "url": "https://github.com/sergeyklay/gohugo-theme-ed/"
+      "url": "https://github.com/ugurkoysuren"
     }
   ],
   "icons": [

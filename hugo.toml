@@ -31,7 +31,7 @@ refLinksErrorLevel = 'WARNING'
 
   # Custom footer text on left sidebar. Use HTMl if needed.
   # "&copy;" and "{year}" will be replaced by © and the current year.
-  footer = 'Built with <a href="https://github.com/sergeyklay/gohugo-theme-ed" target="_blank" rel="noopener noreferrer">Ed</a>. Distributed under an MIT license.'
+  footer = '2025'
 
   # Colour scheme. Options: red, orange, magenta, cyan, blue, brown
   colorScheme = ''
@@ -68,7 +68,7 @@ refLinksErrorLevel = 'WARNING'
   # Site icons, relative to ./static
   [params.assets]
     # favicon.ico for legacy browsers
-    favicon = ''
+    favicon = 'favicon.ico'
 
     # A single SVG icon with a light/dark version for modern browsers
     svgicon = ''
@@ -145,12 +145,22 @@ refLinksErrorLevel = 'WARNING'
     [params.services.googleTagManager]
       id = 'GTM-W8D5W642'
 
+
+defaultContentLanguage = 'de'
+defaultContentLanguageInSubdir = true
 [languages]
   [languages.en]
     languageCode = 'en'
     languageDirection = 'ltr'
     languageName = 'English'
+    contentDir = 'content/en'
     weight = 1
+  [languages.de]
+    languageCode = 'de-DE'
+    languageDirection = 'ltr'
+    languageName = 'Deutsch'
+    contentDir = 'content/de'
+    weight = 2
 
 # For more see https://gohugo.io/content-management/menus/
 [menus]
@@ -169,11 +179,6 @@ refLinksErrorLevel = 'WARNING'
     name = 'Search'
     pageRef = '/search'
     weight = 5
-  [[menus.main]]
-    identifier = 'contact'
-    name = 'Contact'
-    pageRef = '/contact'
-    weight = 6
   [[menus.main]]
     identifier = 'github'
     name = 'GitHub'
