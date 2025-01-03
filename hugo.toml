@@ -10,7 +10,7 @@ copyright = '© 2019-2024 Serghei Iakovlev'
 #
 # NB: Final title of shareable pages will be this plus the
 #     title of the page. E.g. "Posts | Ed."
-title = "Ugur"
+title = "Ugur Köysüren's Blog, Blogging about Tech"
 
 enableRobotsTXT = true
 
@@ -20,11 +20,11 @@ refLinksErrorLevel = 'WARNING'
 
 [params]
   # Site description. Used in meta description
-  description = 'Senior Overthinker'
+  description = 'Ugur Köysüren - Senior Consultant, Developer, Overthinker, Blogger'
 
   # SEO keywords. Used in 'meta name="keywords"' tag.
   # May be overridden by .Keywords or .Tags in front matter.
-  keywords = ['Ugur Köysüren', 'Software', 'programming', 'developer blog', 'personal blog']
+  keywords = ['Ugur Köysüren', 'Software', 'programming', 'developer', 'personal blog', 'programming blog','docker','hugo','selfhosted']
 
   # Used in site header
   tagline = 'daytime programmer, nighttime overthinker'
