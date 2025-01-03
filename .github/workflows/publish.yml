@@ -31,7 +31,7 @@ jobs:
       - name: Generate static site
         env:
           TZ: 'Europe/Berlin'
-        run: hugo --minify
+        run: hugo
 
       - name: Configure SSH deployment key
         uses: shimataro/ssh-key-action@v2
