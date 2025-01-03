@@ -22,7 +22,7 @@
 
   // ns-params:@params
   var i18n = { noResults: "No results found." };
-  var searchConfig = { indexURI: "/index.json", lunrLanguages: ["en", "es"], maxSummaryLength: 100 };
+  var searchConfig = { indexURI: "/index.json", lunrLanguages: ["en"], maxSummaryLength: 100 };
 
   // <stdin>
   var pagesIndex;
@@ -39,6 +39,7 @@
             let langs = /* @__PURE__ */ new Set();
             searchConfig.lunrLanguages.forEach((item) => langs.add(item));
             langs.add("en");
+            langs.add("de");
             const pipeline = lunr.multiLanguage(
               ...langs
             );

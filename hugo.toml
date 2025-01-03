@@ -87,11 +87,11 @@ refLinksErrorLevel = 'WARNING'
 
   showAuthor = true
   [params.author]
-    name = 'Serghei Iakovlev'
-    email = 'contact@serghei.pl'
-    github = 'sergeyklay'
-    twitter = 'egreps'
-    location = 'Wrocław, Poland'
+    name = 'Ugur Köysüren'
+    email = 'me@ugurkoysuren.com'
+    github = 'ugurkoysuren'
+    twitter = 'ugurkoysuren'
+    location = 'Cologne, Germany'
 
   [params.social]
     # Array of Facebook Page Admin IDs for Domain Insights
@@ -111,7 +111,7 @@ refLinksErrorLevel = 'WARNING'
     # required languages below.
     #
     # For more see: https://lunrjs.com/guides/language_support.html
-    languages = ['en', 'es']
+    languages = ['en']
 
   [params.comments]
     enable = false
@@ -146,21 +146,14 @@ refLinksErrorLevel = 'WARNING'
       id = 'GTM-W8D5W642'
 
 
-defaultContentLanguage = 'de'
-defaultContentLanguageInSubdir = true
 [languages]
   [languages.en]
     languageCode = 'en'
     languageDirection = 'ltr'
     languageName = 'English'
-    contentDir = 'content/en'
+    contentDir = 'content'
     weight = 1
-  [languages.de]
-    languageCode = 'de-DE'
-    languageDirection = 'ltr'
-    languageName = 'Deutsch'
-    contentDir = 'content/de'
-    weight = 2
+
 
 # For more see https://gohugo.io/content-management/menus/
 [menus]
