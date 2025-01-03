@@ -68,7 +68,7 @@ refLinksErrorLevel = 'WARNING'
   # Site icons, relative to ./static
   [params.assets]
     # favicon.ico for legacy browsers
-    favicon = 'favicon.ico'
+    favicon = ''
 
     # A single SVG icon with a light/dark version for modern browsers
     svgicon = ''
