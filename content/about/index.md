@@ -35,6 +35,4 @@ whether to conquer another hike or just find more baklava!
 
 
 
----
 
-{{< mini-toc >}}

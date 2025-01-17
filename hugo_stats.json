@@ -8,7 +8,7 @@
       "br",
       "code",
       "div",
-      "footer",
+      "em",
       "form",
       "h1",
       "h2",
@@ -68,7 +68,6 @@
       "post-title",
       "programming",
       "programming-body",
-      "read-more",
       "screen-reader-text",
       "search-container",
       "search-error",
@@ -85,9 +84,6 @@
       "sidebar-nav",
       "sidebar-nav-item",
       "sidebar-toggle",
-      "tag",
-      "tag-link",
-      "tags-cloud",
       "tags-wrapper",
       "text-title",
       "texts",
@@ -99,7 +95,10 @@
     "ids": [
       "beyond-the-code",
       "conclusion",
+      "connecting-cloudflare-with-your-github-repository",
+      "deploying-a-hugo-application-on-cloudflare-pages",
       "deploying-a-hugo-application-using-github-actions-on-a-self-hosted-server",
+      "does-cloudflare-pages-affect-seo",
       "education-and-certifications",
       "hypothesis-link",
       "main",
@@ -110,6 +109,9 @@
       "menu-main-github",
       "menu-main-home",
       "menu-main-search",
+      "my-thoughts-on-cloudflare-and-conclusion",
+      "page-",
+      "page-_index",
       "prerequisites",
       "results-count",
       "results-count-text",
@@ -127,7 +129,9 @@
       "step-3-add-additional-secrets",
       "step-4-configure-the-github-actions-workflow",
       "top-of-site",
-      "top-of-site-anchor"
+      "top-of-site-anchor",
+      "using-github-actions-to-deploy-to-cloudflare-pages-with-wrangler",
+      "why-i-chose-cloudflare-pages-instead-of-vps-or-github-pages"
     ]
   }
 }
