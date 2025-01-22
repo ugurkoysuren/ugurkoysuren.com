@@ -5,8 +5,8 @@ display_section: posts
 
 ### hello.
 
-Ugur, here. I blog about programming, travelling, cars and keep a digital diary.
+Ugur, here. I blog about programming, travelling and keep a digital diary. As you can see from my grammer mistakes, I try to keep LLM's out of my digital diary ;)
 
 ### contact me.
 
-📧 ugurkoysuren@gmail.com
+📧 ugurkoysuren [at] gmail.com
