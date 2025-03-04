@@ -1,6 +1,6 @@
 ---
 title: LLMs in Deutschland - How AI is Changing German Software (And Why You Should Care)
-date: 2025-03-04T20:31:10+02:00
+date: 2025-03-04T07:31:10+02:00
 draft: false
 author: Ugur Köysüren
 lang: en
