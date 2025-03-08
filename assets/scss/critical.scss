@@ -1,0 +1,99 @@
+// Critical CSS for above-the-fold content
+// Include only what's needed for initial viewport
+
+// Font preloading
+@font-face {
+  font-family: 'Font Awesome 5 Brands';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/fontawesome-free-5.15.2-web/webfonts/fa-brands-400.woff2") format("woff2");
+}
+
+// Base styles
+body {
+  margin: 0;
+  font-family: sans-serif;
+  line-height: 1.5;
+  color: #2f2e2a;
+  background-color: #ffffff;
+}
+
+// Layout
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.wrapper {
+  padding-top: 30px;
+}
+
+// Header/navigation
+.header {
+  padding: 1rem 0;
+  background-color: #ffffff;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.logo a {
+  text-decoration: none;
+  color: inherit;
+}
+
+// Navigation
+.menu-main {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-main li {
+  margin-left: 1.5rem;
+}
+
+.menu-main a {
+  text-decoration: none;
+  color: #333;
+}
+
+// Typography
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+// Mobile menu button
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  
+  .menu-main {
+    display: none;
+  }
+}
+
+// Add any other critical styles needed for initial render 
