@@ -5,9 +5,9 @@
 {{ $context := .context | default "regular" }}
 
 {{ if eq $context "avatar" }}
-  {{ $original := resources.Get "images/profile/ugur.webp" }}
+  {{ $original := resources.Get "images/profile/ugur.png" }}
   {{ if $original }}
-    {{ $processed := $original.Resize "150x150 webp" }}
+    {{ $processed := $original.Resize "x400 webp" }}
     <img 
       src="{{ $processed.RelPermalink }}" 
       alt="{{ $alt }}"
