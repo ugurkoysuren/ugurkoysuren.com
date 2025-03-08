@@ -2,6 +2,7 @@
 title: Antilibrary
 pageTitle: Antilibrary 
 semanticType: about
+description: "Explore Ugur Köysüren's antilibrary, a collection of unread books and papers about data-intensive applications, machine learning, and language models that represent my curiosity and future learning journey."
 ---
 
 I decided recently to flip the [Dunning Kruger Effect](https://en.m.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect) and started a antilibrary, for those who are new to the term is it is a term that Nassim Nocholas Taleb mention as "the collection of unread books". I always hated the idea to store books, and have a ego-boosting library.

@@ -69,6 +69,7 @@ languageCode = "en-us"
     meta_twitter_site = "@ugurkoysuren"
     meta_twitter_creator = "@ugurkoysuren"
     append_site_title = true        # appends the .Site.title to the <title> of all pages
+    site_description = "Ugur Koysuren - Software Engineering Leader & Tech Entrepreneur with expertise in building high-performance teams and scalable systems. Experienced in Full-Stack Development, Cloud Architecture & AI Integration."
 
   [params.header]
     enable_fixed_header = false     # if true the header will be sticky and animate on scroll

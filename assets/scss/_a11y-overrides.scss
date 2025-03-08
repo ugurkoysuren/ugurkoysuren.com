@@ -1,0 +1,36 @@
+// Accessibility overrides for better contrast
+
+// Text muted override - make it darker for better contrast (4.5:1 minimum)
+.text-muted {
+  color: #6c6c6c !important; // Darker than default Bootstrap $gray-600 (#6c757d)
+}
+
+// Small text muted needs better contrast
+small.text-muted {
+  color: #5a5a5a !important;
+}
+
+// Improve bg-light contrast
+.strip.bg-light {
+  background-color: #f0f0f0 !important; // Slightly darker than Bootstrap $gray-100 (#f8f9fa)
+  
+  // Ensure all text within this container has proper contrast
+  .text-muted, small.text-muted, span.text-muted {
+    color: #585858 !important;
+  }
+}
+
+// Improve outline button contrast
+.btn-outline-primary {
+  border-color: #0056b3 !important; // Darker blue
+  color: #0056b3 !important;
+  
+  &.btn-sm {
+    font-weight: 600;
+  }
+  
+  &:hover, &:focus {
+    color: #fff !important;
+    background-color: #0056b3 !important;
+  }
+} 
