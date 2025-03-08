@@ -48,7 +48,7 @@
                         <div class="row g-0">
                             <div class="col-md-6">
                                 {{ if .Params.featured_image }}
-                                <img src="{{ .Params.featured_image | relURL }}" class="img-fluid rounded-start" alt="{{ .Title }}" style="width: 100%; height: 350px; object-fit: cover;">
+                                {{ partial "picture-hugo.html" (dict "image" .Params.featured_image "alt" .Title "class" "img-fluid rounded-start" "style" "width: 100%; height: 350px; object-fit: cover;" "context" "featured") }}
                                 {{ else }}
                                 <div class="bg-secondary rounded-start" style="height: 350px;"></div>
                                 {{ end }}

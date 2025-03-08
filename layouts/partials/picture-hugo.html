@@ -1,0 +1,74 @@
+{{ $image := .image }}
+{{ $alt := .alt | default "" }}
+{{ $class := .class | default "" }}
+{{ $style := .style | default "" }}
+{{ $context := .context | default "regular" }}
+
+{{ if eq $context "avatar" }}
+  {{ $original := resources.Get "images/profile/ugur.webp" }}
+  {{ if $original }}
+    {{ $processed := $original.Resize "150x150 webp" }}
+    <img 
+      src="{{ $processed.RelPermalink }}" 
+      alt="{{ $alt }}"
+      class="{{ $class }}"
+      width="{{ $processed.Width }}"
+      height="{{ $processed.Height }}"
+      {{ if $style }}style="{{ $style }}"{{ end }}
+      loading="lazy">
+  {{ end }}
+{{ else if or (eq $context "card") (eq $context "featured") }}
+  {{ $imageBase := path.Base $image }}
+  {{ $imageName := replaceRE "\\.[^.]+$" "" $imageBase }}
+  {{ $imageExt := path.Ext $imageBase }}
+  {{ $assetPath := print "images/blog/" $imageName $imageExt }}
+  {{ $original := resources.Get $assetPath }}
+  
+  {{ if $original }}
+    {{ if eq $context "card" }}
+      {{ $processed := $original.Resize "x200 webp" }}
+      <img 
+        src="{{ $processed.RelPermalink }}" 
+        alt="{{ $alt }}" 
+        class="{{ $class }}" 
+        {{ if $style }}style="{{ $style }}"{{ end }}
+        width="{{ $processed.Width }}"
+        height="{{ $processed.Height }}"
+        loading="lazy">
+    {{ else if eq $context "featured" }}
+      {{ $processed := $original.Resize "x350 webp" }}
+      <img 
+        src="{{ $processed.RelPermalink }}" 
+        alt="{{ $alt }}" 
+        class="{{ $class }}" 
+        {{ if $style }}style="{{ $style }}"{{ end }}
+        width="{{ $processed.Width }}"
+        height="{{ $processed.Height }}"
+        loading="lazy">
+    {{ end }}
+  {{ end }}
+{{ else }}
+  {{ $imageBase := path.Base $image }}
+  {{ $imageName := replaceRE "\\.[^.]+$" "" $imageBase }}
+  {{ $imageExt := path.Ext $imageBase }}
+  {{ $assetPath := print "images/blog/" $imageName $imageExt }}
+  {{ $original := resources.Get $assetPath }}
+  
+  {{ if $original }}
+    <img 
+      src="{{ $original.RelPermalink }}" 
+      alt="{{ $alt }}" 
+      class="{{ $class }}" 
+      {{ if $style }}style="{{ $style }}"{{ end }}
+      width="{{ $original.Width }}"
+      height="{{ $original.Height }}"
+      loading="lazy">
+  {{ else }}
+    <img 
+      src="{{ $image | relURL }}" 
+      alt="{{ $alt }}" 
+      class="{{ $class }}" 
+      {{ if $style }}style="{{ $style }}"{{ end }}
+      loading="lazy">
+  {{ end }}
+{{ end }} 

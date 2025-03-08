@@ -1,0 +1,81 @@
+{{ $image := .image | default "" }}
+{{ $alt := .alt | default "" }}
+{{ $class := .class | default "" }}
+{{ $height := .height | default "auto" }}
+{{ $width := .width | default "100%" }}
+{{ $style := .style | default "" }}
+{{ $isAvatar := .isAvatar | default false }}
+
+{{ if $image }}
+    {{ $imagePath := $image }}
+    {{ $isWebP := in $imagePath ".webp" }}
+    {{ $isJpg := in $imagePath ".jpg" }}
+    {{ $imageContext := .context | default "regular" }}
+
+    {{ if eq $isAvatar true }}
+        <!-- Avatar image handling -->
+        <picture>
+            <!-- WebP sources with different sizes -->
+            <source 
+                srcset="/images/responsive/ugur-150.webp 1x, /images/responsive/ugur-225.webp 1.5x, /images/responsive/ugur-300.webp 2x" 
+                type="image/webp">
+            <!-- JPEG fallback -->
+            <source srcset="/images/responsive/ugur-150.jpg" type="image/jpeg">
+            <img 
+                src="/images/responsive/ugur-150.webp" 
+                alt="{{ $alt }}"
+                class="{{ $class }}"
+                width="150"
+                height="150"
+                {{ if $style }}style="{{ $style }}"{{ end }}
+                loading="lazy">
+        </picture>
+    {{ else if eq $imageContext "card" }}
+        <!-- Card image handling (200px height) -->
+        {{ $baseFileName := path.Base $imagePath }}
+        {{ $nameWithoutExt := replaceRE "\\.[^.]+$" "" $baseFileName }}
+        
+        <picture>
+            <source srcset="/images/blog/responsive/card/{{ $nameWithoutExt }}.webp" type="image/webp">
+            <source srcset="/images/blog/responsive/card/{{ $nameWithoutExt }}.jpg" type="image/jpeg">
+            <img 
+                src="/images/blog/responsive/card/{{ $nameWithoutExt }}.webp" 
+                alt="{{ $alt }}" 
+                class="{{ $class }}" 
+                {{ if $style }}style="{{ $style }}"{{ end }}
+                loading="lazy">
+        </picture>
+    {{ else if eq $imageContext "featured" }}
+        <!-- Featured image handling (350px height) -->
+        {{ $baseFileName := path.Base $imagePath }}
+        {{ $nameWithoutExt := replaceRE "\\.[^.]+$" "" $baseFileName }}
+        
+        <picture>
+            <source srcset="/images/blog/responsive/featured/{{ $nameWithoutExt }}.webp" type="image/webp">
+            <source srcset="/images/blog/responsive/featured/{{ $nameWithoutExt }}.jpg" type="image/jpeg">
+            <img 
+                src="/images/blog/responsive/featured/{{ $nameWithoutExt }}.webp" 
+                alt="{{ $alt }}" 
+                class="{{ $class }}" 
+                {{ if $style }}style="{{ $style }}"{{ end }}
+                loading="lazy">
+        </picture>
+    {{ else }}
+        <!-- Original WebP + JPEG fallback for other contexts -->
+        {{ $webpPath := replace $imagePath ".jpg" ".webp" }}
+        {{ $webpPath = replace $webpPath "/blog/" "/blog/webp/" }}
+
+        <picture>
+            <source srcset="{{ $webpPath | relURL }}" type="image/webp">
+            <source srcset="{{ $imagePath | relURL }}" type="image/jpeg">
+            <img 
+                src="{{ $imagePath | relURL }}" 
+                alt="{{ $alt }}" 
+                class="{{ $class }}" 
+                {{ if $style }}style="{{ $style }}"{{ end }}
+                {{ if ne $height "auto" }}height="{{ $height }}"{{ end }}
+                {{ if ne $width "100%" }}width="{{ $width }}"{{ end }}
+                loading="lazy">
+        </picture>
+    {{ end }}
+{{ end }} 
