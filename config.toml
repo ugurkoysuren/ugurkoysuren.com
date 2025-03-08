@@ -94,7 +94,7 @@ languageCode = "en-us"
     weight = 3
 
 [permalinks]
-  posts = "posts/:year/:title/"
+  posts = "posts/:title/"
   pages = ":slug/"
 
 [taxonomies]
