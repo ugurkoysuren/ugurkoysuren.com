@@ -1,0 +1,9 @@
+{{ if .Site.Data.social }}
+<div class="social">
+  {{ range .Site.Data.social }}
+    <a href="{{ .url }}" target="blank" title="{{ .title }}">
+      <i class="{{ .fa_icon }}" ></i>
+    </a>
+  {{ end }}
+  </div>
+{{ end }}

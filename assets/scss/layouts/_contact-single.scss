@@ -1,0 +1,15 @@
+.page-contact-single {
+    .content {
+        h2 {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 32px;
+            letter-spacing: 0;
+            font-family: var(--font-monospace);
+        }
+        a {
+            text-decoration-thickness: from-font;
+            color: var(--color-base-text-3)
+        }
+    }
+}

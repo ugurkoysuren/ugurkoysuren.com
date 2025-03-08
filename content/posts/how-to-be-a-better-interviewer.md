@@ -1,13 +1,18 @@
 ---
-title: How to be a better interviewer? Tech Interviews are hard, but should it be easy?
-date: 2025-03-02T21:14:10+02:00
+title: How to Be a Better Interviewer (From Someone Who's Been on Both Sides)
+date: 2025-02-15T10:31:10+02:00
 draft: false
 author: Ugur Köysüren
 lang: en
 tags:
-  - Tech Interview
-  - Cracking the Coding Interview
-  - Data Structures And Algorithms
+  - Interviewing
+  - Hiring
+  - Career
+  - Leadership
+  - Management
+featured: true
+featured_image: "/images/blog/job-interview.jpg"
+description: "Practical tips and insights to improve your interviewing skills and make better hiring decisions based on real-world experience."
 ---
 
 ## Tech Interviews: Hard, or Just Bad? (And My Cracking the Coding Interview Journey)

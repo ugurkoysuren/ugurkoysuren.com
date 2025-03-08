@@ -1,0 +1,7 @@
+{{ $external := .external | default "false" }}
+{{ $url := .url | default nil }}
+{{ $text := .text | default nil }}
+
+<a href="{{ if $external }}{{ .url }}{{ else }}{{ .url | relURL }}{{ end }}" {{ if $external }}target="_blank" rel="noopener"{{ end }} class="button">
+    {{ .text }}
+</a>

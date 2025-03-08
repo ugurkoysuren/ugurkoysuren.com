@@ -1,0 +1,15 @@
+<div id="header" class="header {{ if .Site.Params.header.enable_fixed_header }}header-fixed{{ end }}">
+
+    <div class="header-main">
+        <div class="container">
+
+            {{ partial "header/logo.html" . }}
+            {{ if .Site.Menus.main }}
+                {{ partial "menu/menu-main.html" . }}
+                {{ partial "header/hamburger.html" . }}
+            {{ end }}
+            
+        </div>
+    </div>
+
+</div>

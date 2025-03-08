@@ -1,0 +1,104 @@
+baseURL = "/"
+title = "Ugur Koysuren"
+[pagination]
+  pagerSize = 3
+enableGitInfo = false
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+pygmentsUseClasses = true
+metaDataFormat = "yaml"
+languageCode = "en-us"
+
+[params]
+  [params.colors]
+    [params.colors.light]
+      base_bg_1 = "#ffffff"
+      base_bg_2 = "#fcfcfc"
+      base_bg_3 = "#f2f2f2"
+      base_text_1 = "#2f2e2a"
+      base_text_2 = "#535247"
+      base_text_3 = "#848484"
+      primary_bg_1 = "#46e385"
+      primary_bg_2 = "#171618"
+      primary_text_1 = "#fffef5"
+      primary_text_2 = "#f9f8ef"
+      logo_text = "#202020"
+
+    [params.colors.dark]
+      base_bg_1 = "#0b0b0b"
+      base_bg_2 = "#212123"
+      base_bg_3 = "#7e7e82"
+      base_text_1 = "#ffffff"
+      base_text_2 = "#bfc1c2"
+      base_text_3 = "#a8a4a4"
+      primary_bg_1 = "#46e385"
+      primary_bg_2 = "#171618"
+      primary_text_1 = "#fffef5"
+      primary_text_2 = "#f9f8ef"
+      logo_text = "#ffffff"
+
+  [params.fonts]
+    google_fonts = "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&family=Space+Mono&display=swap"
+    heading = "Inter"
+    base = "Inter"
+    monospace = "Space Mono"
+    logo = "Inter"
+
+  [params.logo]
+    logo_text = "Ugur Koysuren"
+    show_logo_text_on_desktop = true
+    show_logo_text_on_mobile = true
+    show_logo_image_on_desktop = true
+    show_logo_image_on_mobile = true
+    logo_image_desktop = "images/logo/logo.svg"
+    logo_image_desktop_invert = "images/logo/logo-invert.svg"
+    logo_image_desktop_width = 32
+    logo_image_desktop_height = 32
+    logo_image_mobile = "images/logo/logo-mobile.svg"
+    logo_image_mobile_invert = "images/logo/logo-invert-mobile.svg"
+    logo_image_mobile_width = 32
+    logo_image_mobile_height = 32
+
+  [params.dark_mode]
+    enable_dark_mode = false
+    show_dark_mode_toggle_in_header = false
+
+  [params.seo]
+    google_analytics_id = ""
+    meta_twitter_card = "summary"
+    meta_twitter_site = "@ugurkoysuren"
+    meta_twitter_creator = "@ugurkoysuren"
+    append_site_title = true        # appends the .Site.title to the <title> of all pages
+
+  [params.header]
+    enable_fixed_header = false     # if true the header will be sticky and animate on scroll
+
+  [params.footer]
+    show_social_media_links = true
+    enable_menu_footer_primary = true
+
+[menu]
+  [[menu.main]]
+    name = "Posts"
+    url = "posts"
+    weight = 1
+  
+  [[menu.main]]
+    name = "About"
+    url = "about"
+    weight = 2
+    
+  [[menu.main]]
+    name = "Antilibrary"
+    url = "antilibrary"
+    weight = 3
+
+[permalinks]
+  posts = "posts/:year/:title/"
+  pages = ":slug/"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  portfolio = "portfolio"
+  author = "authors"

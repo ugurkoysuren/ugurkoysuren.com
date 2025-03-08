@@ -1,0 +1,32 @@
+// Theme
+
+:root {
+  --header-height: 60px;
+  --font-base: {{ .Site.Params.fonts.base }}, sans-serif;
+  --font-heading: {{ .Site.Params.fonts.heading }}, sans-serif;
+  --font-monospace: {{ .Site.Params.fonts.monospace }}, monospace;
+  --font-logo: {{ .Site.Params.fonts.logo }}, sans-serif;
+}
+
+// Generate color variables from _config.yaml [params.colors]
+:root {
+{{ range $key, $value := .Site.Params.colors.light }}
+  --color-{{ replace $key "_" "-" }}: {{ $value }};
+{{ end }}
+}
+
+html[data-mode='dark'] {
+{{ range $key, $value := .Site.Params.colors.dark }}
+  --color-{{ replace $key "_" "-" }}: {{ $value }};
+{{ end }}
+}
+
+{{ range $key, $value := .Site.Params.colors.light }}
+  .theme-{{ replace $key "_" "-" }} {
+    background: var(--color-{{ replace $key "_" "-" }});
+    color: var(--color-{{ replace $key "_" "-" }}-text);
+    p {
+      color: var(--color-{{ replace $key "_" "-" }}-text-offset);
+    }
+  }
+{{ end }}

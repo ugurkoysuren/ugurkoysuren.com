@@ -9,6 +9,8 @@ tags:
   - Cloudflare
   - Cloudflare Pages
   - GitHub
+featured_image: "/images/blog/cloudflare-deploy.jpg"
+description: "A step-by-step guide to deploying your Hugo site to Cloudflare Pages with custom domains and automatic deployments."
 ---
 
 # Deploying a Hugo Application on Cloudflare Pages

@@ -1,15 +1,16 @@
 ---
-title: Deploying a Hugo Application using Github Actions on a a self hosted Server
-date: 2025-01-01T20:35:10+02:00
+title: Automatic Hugo Deployment using GitHub Actions
+date: 2025-01-17T10:31:10+02:00
 draft: false
 author: Ugur Köysüren
 lang: en
-tags: 
+tags:
   - Hugo
-  - Github
-  - Workflows
-  - Github Actions
-  - Devops
+  - GitHub
+  - GitHub Actions
+  - Deployment
+featured_image: "/images/blog/github-actions.jpg"
+description: "Learn how to set up automatic deployments for your Hugo site using GitHub Actions for a seamless publishing workflow."
 ---
 
 # Deploying a Hugo Application Using GitHub Actions on a Self-Hosted Server

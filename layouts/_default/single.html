@@ -1,0 +1,51 @@
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-default-single{{ end }}
+{{ define "header_classes" }}{{ end }}
+
+{{ define "main" }}
+    <div class="strip">
+        <div class="container">
+            <div class="main row justify-content-center">
+                {{ if .Params.image }}
+                <div class="col-12 col-lg-10">
+                    <div class="summary-image">
+                        <img class="img-fluid" src={{ .Params.image | relURL }} />
+                    </div>
+                </div>
+                {{ end }}
+                <div class="col-12 col-md-10 col-lg-8">
+                    {{ if .Params.icon }}
+                    <div class="summary-icon">
+                        <img alt="icon" src="{{ .Site.BaseURL }}{{ .Params.icon }}"/>
+                    </div>
+                    {{ end }}
+                
+                    <h1>{{ .Title }}</h1>
+                    <div class="summary-description">
+                        <p>{{ .Params.description }}</p>
+                    </div>
+
+                    {{ if .Params.categories }}
+                    <div class="summary-categories">
+                        {{ range .Params.categories }}
+                            <a class="summary-category" href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+
+                    {{ if .Params.button.url }}
+                        <div class="buttons">
+                            {{ partial "components/button.html" .Params.button }}
+                        </div>
+                    {{ end }}
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-8">
+                    <div class="content">{{ .Content | safeHTML }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{{ end }}

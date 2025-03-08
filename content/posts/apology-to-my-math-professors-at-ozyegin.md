@@ -1,13 +1,16 @@
 ---
-title: An Open Letter (and Apology) to My Math Professors Why I'm Finally Grokking the Importance of Math in LLMs
-date: 2025-03-03T20:31:10+02:00
+title: An Apology to My Math Professors (10 Years Too Late)
+date: 2025-02-10T09:45:00+02:00
 draft: false
 author: Ugur Köysüren
 lang: en
-tags: 
-  - LLM
-  - LLM Math
-  - Math For AI
+tags:
+  - Mathematics
+  - Education
+  - Personal Growth
+  - Career
+featured_image: "/images/blog/math-professor.jpg"
+description: "A heartfelt reflection on the importance of mathematics in programming and a belated appreciation for the professors who tried to teach me."
 ---
 
 ## An Open Letter (and Apology) to My Math Professors: Why I'm Finally Grokking the Importance of Math in LLMs

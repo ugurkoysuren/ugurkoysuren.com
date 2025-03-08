@@ -14,17 +14,19 @@ tags:
   - ChatGPT
   - GDPR
   - DSGVO
+featured_image: "/images/blog/germany-ai.jpg"
+description: "Die aktuelle Landschaft der KI und großen Sprachmodelle in Deutschland - Herausforderungen und Chancen für Unternehmen."
 ---
 
 ## LLMs in Deutschland: Between Innovation and Regulation
 
-Servus! (As you know I work in Munich!). I went this year to W-JAX 2025 in Munich, and let me tell you, the air was *charged* with AI enthusiasm. It felt like every other session was about Large Language Models (LLMs) and how they’re about to revolutionize, well, everything. And while the potential is HUGE, especially in the German software market, it’s not *quite* as simple as dropping a few LLMs into your existing codebase and watching the magic happen.
+Servus! (As you know I work in Munich!). I went this year to W-JAX 2025 in Munich, and let me tell you, the air was *charged* with AI enthusiasm. It felt like every other session was about Large Language Models (LLMs) and how they're about to revolutionize, well, everything. And while the potential is HUGE, especially in the German software market, it's not *quite* as simple as dropping a few LLMs into your existing codebase and watching the magic happen.
 
-I spent a lot of time chatting with developers, product managers, and even some of the big-name consultancy folks. The general consensus? LLMs are definitely on the radar, but implementation is...complex. There's excitement, but also a healthy dose of German *Gründlichkeit* (thoroughness, for those of you who don’t speak German) and a considerable amount of concern around Datenschutz (data protection).
+I spent a lot of time chatting with developers, product managers, and even some of the big-name consultancy folks. The general consensus? LLMs are definitely on the radar, but implementation is...complex. There's excitement, but also a healthy dose of German *Gründlichkeit* (thoroughness, for those of you who don't speak German) and a considerable amount of concern around Datenschutz (data protection).
 
 My own journey with LLMs has been a bit of a whirlwind, too. I started playing around with ChatGPT like everyone else, then got hooked on Cursor for the coding superpowers, and now I'm actively exploring Spring AI to see how we can bake LLM capabilities *safely* and responsibly into our projects. It's a fascinating time to be a developer!
 
-So, what’s the deal with LLMs in the German software world? Here's my take, based on my experiences and what I've gleaned from the field:
+So, what's the deal with LLMs in the German software world? Here's my take, based on my experiences and what I've gleaned from the field:
 
 **Beyond the Hype: Real-World LLM Applications in Germany**
 

@@ -1,0 +1,75 @@
+.page-home {
+    .intro {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .social {
+            display: flex;
+            justify-content: center;
+            color: var(--color-base-text-1);
+            padding: 3px 32px;
+            border-radius: 50px;
+        }
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+    .cta {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .buttons {
+            display: flex;
+            justify-content: center;
+            .button {
+                margin-right: 12px;
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+        }
+        .cta-footer {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: row;
+            font-size: 16px;
+            color: var(--color-base-text-3);
+            font-family: var(--font-monospace);
+            a {
+                padding: 6px 12px;
+            }
+            .cta-phone {
+                font-size: 16px;
+                display: inline-block;
+                color: var(--color-base-text-3);
+                text-decoration-line: underline;
+                text-decoration-style: dotted;
+                text-decoration-color: var(--color-base-text-3);
+                &:hover {
+                    text-decoration-line: underline;
+                    text-decoration-style: dotted;
+                    text-decoration-color: var(--color-base-text-1);
+                }
+            }
+            .cta-email {
+                display: inline-block;
+                color: var(--color-base-text-3);
+                text-decoration-line: underline;
+                text-decoration-style: solid;
+                text-decoration-color: var(--color-base-text-3);
+                &:hover {
+                    text-decoration-line: underline;
+                    text-decoration-style: solid;
+                    text-decoration-color: var(--color-base-text-1);
+                }
+            }
+        }
+    }
+   
+}
