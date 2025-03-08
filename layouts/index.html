@@ -3,7 +3,29 @@
 {{ define "header_classes" }}{{ end }}
 
 {{ define "main" }}
-
+{{ if .Params.lead.enabled }}
+<div class="strip">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-12 col-md-10 ">
+                <div class="intro">
+                    {{ partial "components/lead.html" .Params.lead }}
+                    {{ if .Params.lead.show_social_media_icons }}
+                        {{ partial "components/social.html" . }}
+                    {{ end }}
+                    {{ if .Params.lead.buttons }}
+                    <div class="buttons">
+                        {{ range .Params.lead.buttons }}
+                            {{ partial "components/button.html" . }}    
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}
     {{ $section := $.Site.GetPage "section" "posts" }}
     {{ $pages := where $.Site.RegularPages "Type" "posts" }}
     {{ $limit := 6 }}

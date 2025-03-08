@@ -27,6 +27,12 @@
     {{ end }}
 
     {{ partial "seo/meta.html" . }}
+    {{ if templates.Exists "partials/head-custom.html" }}
+        {{ partial "head-custom.html" . }}
+    {{ end }}
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/custom.css">
 
     {{ block "header_css" . }}{{ end }}
 

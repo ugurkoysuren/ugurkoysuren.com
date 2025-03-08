@@ -1,0 +1,86 @@
+/* Custom styles for Ugur's website */
+
+.social {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #46e385;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: #171618;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.buttons a {
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.buttons a.primary {
+  background-color: #46e385;
+  color: #fff;
+}
+
+.buttons a.outline {
+  border: 2px solid #46e385;
+  color: #46e385;
+}
+
+.buttons a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.lead {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.lead h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 900;
+}
+
+.lead p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 25px;
+  border: 4px solid #46e385;
+  width: 150px !important;
+  height: 150px !important;
+} 

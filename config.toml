@@ -1,5 +1,5 @@
 baseURL = "/"
-title = "Ugur Koysuren"
+title = "Ugur Köysüren"
 [pagination]
   pagerSize = 3
 enableGitInfo = false
@@ -45,11 +45,11 @@ languageCode = "en-us"
     logo = "Inter"
 
   [params.logo]
-    logo_text = "Ugur Koysuren"
+    logo_text = "Ugur Köysüren"
     show_logo_text_on_desktop = true
     show_logo_text_on_mobile = true
-    show_logo_image_on_desktop = true
-    show_logo_image_on_mobile = true
+    show_logo_image_on_desktop = false
+    show_logo_image_on_mobile = false
     logo_image_desktop = "images/logo/logo.svg"
     logo_image_desktop_invert = "images/logo/logo-invert.svg"
     logo_image_desktop_width = 32
