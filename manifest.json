@@ -1,0 +1,19 @@
+{
+    "name":"Ugur Koysuren",
+    "short_name":"UK",
+    "start_url":"https://ugurkoysuren.github.io/portfolio/",
+    "display":"standalone",
+    "description":"This is me.",
+    "icons":[
+    {
+    "src":"assets/logo/192x192.png",                     
+    "sizes":"192x192",
+    "type":"image/png"
+    },
+    {
+    "src":"assets/logo/512x512.png",
+    "sizes":"512x512",
+    "type":"image/png"
+    }
+  ]
+}

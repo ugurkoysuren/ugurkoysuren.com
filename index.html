@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ugur Koysuren</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('js/serviceworker.js', { scope: './' });
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="paper-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <h1 class="title"><a href="">Ugur Koysuren</a></h1>
+                <p class="subtitle">Software Engineer</p>
+
+                <div class="banner-image">
+                    <img src="assets/prof_pic-800.webp" alt="Ugur Koysuren" />
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <button onclick="showAbout()" class="nav-item">about</button>
+                    <button onclick="showAntilibrary()" class="nav-item">antilibrary</button>
+                </nav>
+                
+                <div class="metadata">
+                    <p class="meta-label">Links</p>
+                    <p><a href="https://ugurkoysuren.bearblog.dev/">blog</a></p>
+                    <p><a href="https://github.com/ugurkoysuren" target="_blank">github</a></p>
+                    <p><a href="https://linkedin.com/in/koysurenugur" target="_blank">linkedIn</a></p>
+                    <p>me at ugurkoysuren.com</p>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="content-area">
+            <div id="content">
+                <p>Software Engineer passionate about AI and distributed systems. Select a section to explore.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>
