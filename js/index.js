@@ -1,23 +1,22 @@
 function showAbout() {
     about = `
         <h3>About</h3>
-        <p>I'm a Software Engineer with a passion for building distributed systems and exploring the frontiers of artificial intelligence. I've spent 8 years designing scalable architectures and solving complex engineering challenges.</p>
-
-        <p>My work sits at the intersection of systems engineering and machine learning. I'm fascinated by how large-scale distributed systems can power intelligent applications, and how we can build resilient infrastructure that scales.</p>
-
-        <p>I hold an M.A. in Business Information Systems from Boğaziçi University and a B.Sc. in Electrical & Electronics Engineering from Özyeğin University. I'm certified as an AWS Solution Architect Associate and Certified Kubernetes Application Developer (CKAD).</p>
-
-        <p>Beyond code, you'll find me grooving to funky rhythms on my bass guitar, diving into game worlds, or exploring nature on hiking trails. I'm also an avid traveler and food enthusiast who believes the best ideas come from diverse experiences.</p>
+        <p>I build distributed systems and explore AI frontiers. 8 years of designing scalable architectures at the intersection of systems engineering and machine learning.</p>
 
         <div class="experience">
-            <p class="experience-title">Interests & Focus</p>
+            <p class="experience-title">Cool Things I've Done</p>
             <ul class="experience-points">
-                <li>Artificial Intelligence & Machine Learning</li>
-                <li>Distributed Systems & Scalability</li>
-                <li>Cloud-Native Architecture</li>
-                <li>Backend Engineering & APIs</li>
-                <li>DevOps & Infrastructure Automation</li>
-                <li>Open Source Software</li>
+                <li>Large-scale distributed systems for intelligent applications</li>
+                <li>AWS Certified Solution Architect & Kubernetes App Developer (CKAD)</li>
+                <li>Resilient infrastructure that actually scales</li>
+            </ul>
+        </div>
+
+        <div class="experience">
+            <p class="experience-title">Beyond Code</p>
+            <ul class="experience-points">
+                <li>Bass guitar, gaming, hiking, traveling, and food hunting</li>
+                <li>Best ideas come from diverse experiences</li>
             </ul>
         </div>
     `;
