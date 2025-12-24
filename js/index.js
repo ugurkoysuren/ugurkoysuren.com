@@ -62,5 +62,3 @@ function showAntilibrary() {
     `;
     document.getElementById('content').innerHTML = antilibrary;
 }
-
-window.addEventListener('DOMContentLoaded', showAbout);
